@@ -12,6 +12,8 @@
 		9B98557F1FC705F800EE90DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B98557D1FC705F800EE90DD /* Main.storyboard */; };
 		9B9855811FC705F800EE90DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9855801FC705F800EE90DD /* Assets.xcassets */; };
 		9B9855841FC705F800EE90DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9855821FC705F800EE90DD /* LaunchScreen.storyboard */; };
+		9B9855901FC707EC00EE90DD /* GradeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98558F1FC707EC00EE90DD /* GradeController.swift */; };
+		9B9855921FC70A7D00EE90DD /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9855911FC70A7D00EE90DD /* UserDefaultManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		9B9855801FC705F800EE90DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B9855831FC705F800EE90DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B9855851FC705F800EE90DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B98558F1FC707EC00EE90DD /* GradeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeController.swift; sourceTree = "<group>"; };
+		9B9855911FC70A7D00EE90DD /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,9 @@
 		9B9855781FC705F800EE90DD /* Evaluation+ */ = {
 			isa = PBXGroup;
 			children = (
+				9B9855911FC70A7D00EE90DD /* UserDefaultManager.swift */,
 				9B9855791FC705F800EE90DD /* AppDelegate.swift */,
+				9B98558F1FC707EC00EE90DD /* GradeController.swift */,
 				9B98557B1FC705F800EE90DD /* ViewController.swift */,
 				9B98557D1FC705F800EE90DD /* Main.storyboard */,
 				9B9855801FC705F800EE90DD /* Assets.xcassets */,
@@ -137,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B98557C1FC705F800EE90DD /* ViewController.swift in Sources */,
+				9B9855901FC707EC00EE90DD /* GradeController.swift in Sources */,
+				9B9855921FC70A7D00EE90DD /* UserDefaultManager.swift in Sources */,
 				9B98557A1FC705F800EE90DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
