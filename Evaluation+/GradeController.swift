@@ -12,11 +12,13 @@ class GradeController: UIViewController, UITableViewDelegate, UITableViewDataSou
     typealias studentName = String
     typealias course = String
     typealias grade = Double
+    typealias poid = Double
     //----------------
     let userDefaultsObj = UserDefaultManager()
-    var studentGrades: [studentName: [course: grade]]!
+    var studentGrades: [studentName: [course : [grade : poid]]]!
     var arrOfCourses: [course] = []
     var arrOfGrades: [grade] = []
+    var arrOfPoids : [poid] = []
     //----------------
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,28 +32,35 @@ class GradeController: UIViewController, UITableViewDelegate, UITableViewDataSou
     //virifier si il ya des valeur au pas
     func loadUserDefaults() {
         if userDefaultsObj.doesKeyExist(theKey: "grades") {
-            studentGrades = userDefaultsObj.getValue(theKey: "grades") as! [studentName: [course: grade]]
+            studentGrades = userDefaultsObj.getValue(theKey: "grades") as! [studentName: [course : [grade : poid]]]
         } else {
-            studentGrades = [studentName: [course: grade]]() //une valeur assigner mais vide
+            studentGrades = [studentName: [course : [grade : poid]]]() //une valeur assigner mais vide
         }
     }
     //----------------
     func fillUpArray() {
         let name = student_name_label.text
         let course_and_grade = studentGrades[name!]
+        let grade2 = [course](course_and_grade!.keys)[0]
+        let course_and_grade2 = course_and_grade?[grade2]
+        
         arrOfCourses = [course](course_and_grade!.keys)
-        arrOfGrades = [grade](course_and_grade!.values)
+        arrOfGrades = [grade](course_and_grade2!.keys)
+        arrOfPoids = [grade](course_and_grade2!.values)
     }
     //----------------
     func loadCourseAndGrade() {
         let name = student_name_label.text
         var course_and_grade = studentGrades[name!]
+        let grade2 = [course](course_and_grade!.keys)[0]
+        let course_and_grade2 = course_and_grade?[grade2]
+        
         if course_and_grade?.keys.count == 0 {
-            studentGrades[name!] = ["Example": 10]
+            studentGrades[name!] = ["Example": [10 : 0]]
             course_and_grade = studentGrades[name!]
         }
         let the_course = [course](course_and_grade!.keys)[0]
-        let the_grade = [grade](course_and_grade!.values)[0]
+        let the_grade = [grade](course_and_grade2!.keys)[0]
         course_field.text = the_course
         grade_field.text = String(the_grade)
         course_grade_tableview.reloadData()

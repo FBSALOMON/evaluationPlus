@@ -9,9 +9,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     typealias studentName = String
     typealias course = String
     typealias grade = Double
+    typealias poid = Double
     //---------------
     let userDefaultsObj = UserDefaultManager()
-    var studentGrades: [studentName: [course: grade]]!
+    var studentGrades: [studentName: [course : [grade : poid]]]!
     //---------------
     override func viewDidLoad() {
         super.viewDidLoad()
